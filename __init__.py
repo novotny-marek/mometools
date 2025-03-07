@@ -1,3 +1,3 @@
 def classFactory(iface):
-    from provider import Provider
-    return Provider(iface)
+    from .processing.mometoolsProviderPlugin import MometoolsProviderPlugin
+    return MometoolsProviderPlugin()
