@@ -1,6 +1,7 @@
 from qgis.core import QgsProcessingProvider
+from .qgisUtils import gdf_to_qgis_layer, qgis_layer_to_gdf
 
-class Provider(QgsProcessingProvider):
+class MometoolsProvider(QgsProcessingProvider):
     """
     The provider class of the plugin.
     """
@@ -8,7 +9,7 @@ class Provider(QgsProcessingProvider):
         """
         Load algorithms into the provider.
         """
-        self.addAlgorithm()
+        self.addAlgorithm(gdf_to_qgis_layer())
 
     def id(self) -> str:
         """
